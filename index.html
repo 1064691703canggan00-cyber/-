@@ -209,137 +209,199 @@ jia:{name:"贾樟柯",en:"Jia Zhangke",emoji:"🏚️",col:"#3a3028",ac:"#a1887f
 
 var TL={perfectionism:"完美主义",emotion:"情感浓度",rebellion:"叛逆指数",philosophy:"哲学脑",visual:"视觉癖",narrative:"叙事力",humor:"搞笑值",humanity:"人味儿"};
 
-var Q=[
-// 每个选项均包含 4 位导演，分值梯度为 4, 3, 2, 1
-Q=[
-{q:"你的猫从桌上把你最贵的杯子推下去了：",o:[
-  {t:"蹲下来研究碎裂纹路，比杯子本身还美",s:{kubrick:4,wes:3,villeneuve:2,leeang:1}},
-  {t:"给碎片打光拍九宫格",s:{wonkar:4,lynch:3,varda:2,miyazaki:1}},
-  {t:"骂了猫三秒然后抱着它道歉",s:{gerwig:4,koreeda:3,coen:2,hitchcock:1}},
-  {t:"「猫其实在执行一项秘密暗杀计划」",s:{bong:4,nolan:3,tarkovsky:2,apichatpong:1}}
-]},
-{q:"你被困在一个无限循环的电梯里：",o:[
-  {t:"数每次循环的细微差别，寻找bug",s:{nolan:4,kubrick:3,hitchcock:2,bong:1}},
-  {t:"坐下来闭眼，无限循环挺适合冥想",s:{tarkovsky:4,apichatpong:3,akerman:2,leeang:1}},
-  {t:"对着监控摄像头讲脱口秀",s:{tarantino:4,fellini:3,coen:2,wes:1}},
-  {t:"给电梯按钮们取名字并设定人物关系",s:{lynch:4,gerwig:3,varda:2,miyazaki:1}}
-]},
-{q:"朋友群里说「有大消息」然后人消失了：",o:[
-  {t:"焦虑到每三十秒刷一次聊天",s:{leeang:4,wonkar:3,akerman:2,koreeda:1}},
-  {t:"脑中已画出五种可能性的概率分布",s:{villeneuve:4,nolan:3,kubrick:2,bong:1}},
-  {t:"连发15条语音催命",s:{gerwig:4,tarantino:3,spielberg:2,fellini:1}},
-  {t:"回一个「。」然后把手机扣过去",s:{apichatpong:4,tarkovsky:3,jia:2,coen:1}}
-]},
-{q:"上帝说你可以删除一种人类情感：",o:[
-  {t:"无聊——没有它人类早上天了",s:{coen:4,fellini:3,tarantino:2,jia:1}},
-  {t:"谢谢，我一个都不删",s:{koreeda:4,miyazaki:3,varda:2,spielberg:1}},
-  {t:"嫉妒——它把所有好东西都变酸了",s:{leeang:4,gerwig:3,hitchcock:2,wonkar:1}},
-  {t:"不删情感，我想删「肤浅」这种状态",s:{akerman:4,tarkovsky:3,villeneuve:2,kubrick:1}}
-]},
-{q:"如果你能暂停全世界十分钟：",o:[
-  {t:"把方圆一公里的东西全摆成完美对称",s:{wes:4,kubrick:3,nolan:2,hitchcock:1}},
-  {t:"走到街上一个个看每张定格的脸",s:{varda:4,wonkar:3,jia:2,villeneuve:1}},
-  {t:"翻所有人的手机聊天记录",s:{bong:4,lynch:3,tarantino:2,fellini:1}},
-  {t:"哪也不去，就听十分钟真正的安静",s:{tarkovsky:4,apichatpong:3,akerman:2,leeang:1}}
-]},
-{q:"你更害怕哪种噩梦？",o:[
-  {t:"所有人认识你，但你不认识任何人",s:{wonkar:4,spielberg:3,jia:2,leeang:1}},
-  {t:"发现这世界其实是某人写的剧本",s:{lynch:4,nolan:3,apichatpong:2,coen:1}},
-  {t:"年度总结PPT在全公司面前打不开",s:{kubrick:4,nolan:3,wes:2,villeneuve:1}},
-  {t:"一切如常但你就是觉得哪里不对",s:{hitchcock:4,tarkovsky:3,akerman:2,wonkar:1}}
-]},
-{q:"预算只够装修一样东西，你选：",o:[
-  {t:"一整面书架，按色谱排列",s:{wes:4,miyazaki:3,kubrick:2,nolan:1}},
-  {t:"一扇好窗户，要有最好的自然光",s:{tarkovsky:4,apichatpong:3,akerman:2,varda:1}},
-  {t:"一套顶级音响系统",s:{tarantino:4,lynch:3,fellini:2,wonkar:1}},
-  {t:"一张能坐下八个人的大餐桌",s:{koreeda:4,jia:3,gerwig:2,spielberg:1}}
-]},
-{q:"收到一个没有署名的神秘包裹：",o:[
-  {t:"量尺寸、查邮戳、分析胶带品牌",s:{kubrick:4,nolan:3,hitchcock:2,villeneuve:1}},
-  {t:"一秒撕开，悬念是给胆小鬼准备的",s:{tarantino:4,bong:3,coen:2,fellini:1}},
-  {t:"先放在不同光线下拍了几组照片",s:{varda:4,wonkar:3,lynch:2,gerwig:1}},
-  {t:"在窗台上放三天，享受「不知道」的快感",s:{akerman:4,apichatpong:3,tarkovsky:2,wes:1}}
-]},
-{q:"如果你是一种天气：",o:[
-  {t:"暴风雨前那种让头皮发麻的闷热",s:{hitchcock:4,villeneuve:3,bong:2,lynch:1}},
-  {t:"热带午后说来就来的暴雨",s:{apichatpong:4,jia:3,fellini:2,tarantino:1}},
-  {t:"冬天清晨第一场雪落地的声音",s:{miyazaki:4,koreeda:3,akerman:2,spielberg:1}},
-  {t:"黄昏最后那几分钟，什么都在消失",s:{wonkar:4,varda:3,leeang:2,wes:1}}
-]},
-{q:"有人说你「想太多了」：",o:[
-  {t:"谢谢，想少了才可怕",s:{kubrick:4,nolan:3,wes:2,villeneuve:1}},
-  {t:"你确定不是你想太少了？",s:{bong:4,coen:3,gerwig:2,tarantino:1}},
-  {t:"你说得对……但我真的停不下来",s:{leeang:4,koreeda:3,miyazaki:2,wonkar:1}},
-  {t:"不是我想多了，是这个世界太粗糙",s:{akerman:4,tarkovsky:3,wonkar:2,apichatpong:1}}
-]},
-{q:"给全人类发一条匿名弹幕：",o:[
-  {t:"「闭嘴听风」",s:{tarkovsky:4,villeneuve:3,apichatpong:2,akerman:1}},
-  {t:"「你演得太用力了」",s:{coen:4,jia:3,bong:2,fellini:1}},
-  {t:"「没事的，会好的」",s:{spielberg:4,miyazaki:3,koreeda:2,gerwig:1}},
-  {t:"「你是不是也有种被谁盯着的感觉」",s:{hitchcock:4,lynch:3,wonkar:2,varda:1}}
-]},
-{q:"做了个很离谱的梦，醒来后：",o:[
-  {t:"抓起手机记下每个不合理的细节",s:{lynch:4,fellini:3,apichatpong:2,koreeda:1}},
-  {t:"画一张梦的流程图分析叙事漏洞",s:{nolan:4,kubrick:3,hitchcock:2,bong:1}},
-  {t:"添油加醋讲给朋友听当段子",s:{tarantino:4,gerwig:3,spielberg:2,coen:1}},
-  {t:"闭上眼试图再回到梦里",s:{wonkar:4,koreeda:3,akerman:2,miyazaki:1}}
-]},
-{q:"你最想要的无用超能力：",o:[
-  {t:"看到别人脑海里正在播放的画面",s:{lynch:4,apichatpong:3,kubrick:2,fellini:1}},
-  {t:"让周围一切自动变成完美对称",s:{wes:4,nolan:3,villeneuve:2,bong:1}},
-  {t:"摸到任何东西就能看到它的一生",s:{varda:4,jia:3,spielberg:2,wonkar:1}},
-  {t:"给全世界的BGM换成你的歌单",s:{tarantino:4,fellini:3,coen:2,wes:1}}
-]},
-{q:"吵完架冷战中，你会：",o:[
-  {t:"写了三千字长信，然后永久存入草稿箱",s:{wonkar:4,akerman:3,leeang:2,koreeda:1}},
-  {t:"面不改色装没事，内心在排练下一次对话",s:{hitchcock:4,villeneuve:3,nolan:2,kubrick:1}},
-  {t:"憋不住先发一句「你吃了吗」破冰",s:{spielberg:4,gerwig:3,koreeda:2,miyazaki:1}},
-  {t:"什么都不说，默默做了一桌菜",s:{miyazaki:4,koreeda:3,jia:2,varda:1}}
-]},
-{q:"你的人生电影片尾你想要：",o:[
-  {t:"一首没有歌词的钢琴曲，画面慢慢暗掉",s:{tarkovsky:4,akerman:3,villeneuve:2,leeang:1}},
-  {t:"一首烂大街但全场大合唱的老歌",s:{spielberg:4,jia:3,gerwig:2,fellini:1}},
-  {t:"一首只有37个人听过的地下乐队的歌",s:{lynch:4,coen:3,wes:2,tarantino:1}},
-  {t:"没有音乐，只有环境音慢慢消失",s:{wonkar:4,apichatpong:3,leeang:2,varda:1}}
-]},
-{q:"好朋友说她在公司被当透明人了：",o:[
-  {t:"立刻帮她拆解局面+三步行动计划",s:{nolan:4,hitchcock:3,bong:2,kubrick:1}},
-  {t:"什么也不说，就默默陪她坐着",s:{koreeda:4,miyazaki:3,akerman:2,varda:1}},
-  {t:"「走，现在就去喝一杯，骂他个够」",s:{tarantino:4,varda:3,jia:2,fellini:1}},
-  {t:"过了很久发一条消息：「我一直都看见你」",s:{leeang:4,wonkar:3,gerwig:2,akerman:1}}
-]},
-{q:"你更喜欢怎么记录生活？",o:[
-  {t:"手写日记，像给未来的自己写密信",s:{akerman:4,wonkar:3,tarkovsky:2,leeang:1}},
-  {t:"到处拍——垃圾桶、野猫、墙上的裂缝",s:{varda:4,jia:3,fellini:2,apichatpong:1}},
-  {t:"做精致相册，配色排版必须完美",s:{wes:4,gerwig:3,spielberg:2,miyazaki:1}},
-  {t:"不记录，记住了就记住了，忘了就忘了",s:{apichatpong:4,miyazaki:3,koreeda:2,villeneuve:1}}
-]},
-{q:"看完一部让你久久回不过神的电影：",o:[
-  {t:"它戳中了你一直想说但说不出的东西",s:{leeang:4,akerman:3,wonkar:2,koreeda:1}},
-  {t:"它让你第一次注意到了某些人的存在",s:{varda:4,jia:3,villeneuve:2,spielberg:1}},
-  {t:"你在黑暗中偷偷哭了又偷偷笑了",s:{gerwig:4,spielberg:3,miyazaki:2,koreeda:1}},
-  {t:"你想立刻二刷来研究它是怎么做到的",s:{nolan:4,kubrick:3,hitchcock:2,wes:1}}
-]},
-{q:"如果你死后可以变成一样东西留在人间：",o:[
-  {t:"一盏永远不关的路灯",s:{jia:4,fellini:3,leeang:2,hitchcock:1}},
-  {t:"一部没有结局的电影",s:{lynch:4,apichatpong:3,tarkovsky:2,villeneuve:1}},
-  {t:"一张被很多人坐过的公园长椅",s:{varda:4,koreeda:3,gerwig:2,miyazaki:1}},
-  {t:"一个所有人都找不到的暗门",s:{hitchcock:4,kubrick:3,bong:2,nolan:1}}
-]},
-{q:"最想印在T恤上的一句话：",o:[
-  {t:"「请勿触碰」",s:{kubrick:4,wes:3,hitchcock:2,nolan:1}},
-  {t:"「人生苦短，别看烂片」",s:{tarantino:4,coen:3,fellini:2,bong:1}},
-  {t:"「我没事」（背面写着「骗你的」）",s:{leeang:4,wonkar:3,akerman:2,gerwig:1}},
-  {t:"「你看那朵云」",s:{miyazaki:4,apichatpong:3,varda:2,jia:1}}
-]},
-{q:"你和「空闲时间」的关系是：",o:[
-  {t:"发呆越久越好，脑子里的画面自己会来",s:{apichatpong:4,jia:3,akerman:2,tarkovsky:1}},
-  {t:"心里会生出一种无法忍受的焦虑感",s:{villeneuve:4,kubrick:3,nolan:2,bong:1}},
-  {t:"立刻找事做——人生苦短不容浪费",s:{bong:4,coen:3,jia:2,tarantino:1}},
-  {t:"做点什么有仪式感的小事，比如泡一杯茶",s:{spielberg:4,miyazaki:3,leeang:2,koreeda:1}}
-]}
-]
-;
+// 修正后的题目数据部分
+var Q = [
+  {
+    q: "你的猫从桌上把你最贵的杯子推下去了：",
+    o: [
+      { t: "蹲下来研究碎裂纹路，比杯子本身还美", s: { kubrick: 4, wes: 3, villeneuve: 2, leeang: 1 } },
+      { t: "给碎片打光拍九宫格", s: { wonkar: 4, lynch: 3, varda: 2, miyazaki: 1 } },
+      { t: "骂了猫三秒然后抱着它道歉", s: { gerwig: 4, koreeda: 3, coen: 2, hitchcock: 1 } },
+      { t: "「猫其实在执行一项秘密暗杀计划」", s: { bong: 4, nolan: 3, tarkovsky: 2, apichatpong: 1 } }
+    ]
+  },
+  {
+    q: "你被困在一个无限循环的电梯里：",
+    o: [
+      { t: "数每次循环的细微差别，寻找bug", s: { nolan: 4, kubrick: 3, hitchcock: 2, bong: 1 } },
+      { t: "坐下来闭眼，无限循环挺适合冥想", s: { tarkovsky: 4, apichatpong: 3, akerman: 2, leeang: 1 } },
+      { t: "对着监控摄像头讲脱口秀", s: { tarantino: 4, fellini: 3, coen: 2, wes: 1 } },
+      { t: "给电梯按钮们取名字并设定人物关系", s: { lynch: 4, gerwig: 3, varda: 2, miyazaki: 1 } }
+    ]
+  },
+  {
+    q: "朋友群里说「有大消息」然后人消失了：",
+    o: [
+      { t: "焦虑到每三十秒刷一次聊天", s: { leeang: 4, wonkar: 3, akerman: 2, koreeda: 1 } },
+      { t: "脑中已画出五种可能性的概率分布", s: { villeneuve: 4, nolan: 3, kubrick: 2, bong: 1 } },
+      { t: "连发15条语音催命", s: { gerwig: 4, tarantino: 3, spielberg: 2, fellini: 1 } },
+      { t: "回一个「。」然后把手机扣过去", s: { apichatpong: 4, tarkovsky: 3, jia: 2, coen: 1 } }
+    ]
+  },
+  {
+    q: "上帝说你可以删除一种人类情感：",
+    o: [
+      { t: "无聊——没有它人类早上天了", s: { coen: 4, fellini: 3, tarantino: 2, jia: 1 } },
+      { t: "谢谢，我一个都不删", s: { koreeda: 4, miyazaki: 3, varda: 2, spielberg: 1 } },
+      { t: "嫉妒——它把所有好东西都变酸了", s: { leeang: 4, gerwig: 3, hitchcock: 2, wonkar: 1 } },
+      { t: "不删情感，我想删「肤浅」这种状态", s: { akerman: 4, tarkovsky: 3, villeneuve: 2, kubrick: 1 } }
+    ]
+  },
+  {
+    q: "如果你能暂停全世界十分钟：",
+    o: [
+      { t: "把方圆一公里的东西全摆成完美对称", s: { wes: 4, kubrick: 3, nolan: 2, hitchcock: 1 } },
+      { t: "走到街上一个个看每张定格的脸", s: { varda: 4, wonkar: 3, jia: 2, villeneuve: 1 } },
+      { t: "翻所有人的手机聊天记录", s: { bong: 4, lynch: 3, tarantino: 2, fellini: 1 } },
+      { t: "哪也不去，就听十分钟真正的安静", s: { tarkovsky: 4, apichatpong: 3, akerman: 2, leeang: 1 } }
+    ]
+  },
+  {
+    q: "你更害怕哪种噩梦？",
+    o: [
+      { t: "所有人认识你，但你不认识任何人", s: { wonkar: 4, spielberg: 3, jia: 2, leeang: 1 } },
+      { t: "发现这世界其实是某人写的剧本", s: { lynch: 4, nolan: 3, apichatpong: 2, coen: 1 } },
+      { t: "年度总结PPT在全公司面前打不开", s: { kubrick: 4, nolan: 3, wes: 2, villeneuve: 1 } },
+      { t: "一切如常但你就是觉得哪里不对", s: { hitchcock: 4, tarkovsky: 3, akerman: 2, wonkar: 1 } }
+    ]
+  },
+  {
+    q: "预算只够装修一样东西，你选：",
+    o: [
+      { t: "一整面书架，按色谱排列", s: { wes: 4, miyazaki: 3, kubrick: 2, nolan: 1 } },
+      { t: "一扇好窗户，要有最好的自然光", s: { tarkovsky: 4, apichatpong: 3, akerman: 2, varda: 1 } },
+      { t: "一套顶级音响系统", s: { tarantino: 4, lynch: 3, fellini: 2, wonkar: 1 } },
+      { t: "一张能坐下八个人的大餐桌", s: { koreeda: 4, jia: 3, gerwig: 2, spielberg: 1 } }
+    ]
+  },
+  {
+    q: "收到一个没有署名的神秘包裹：",
+    o: [
+      { t: "量尺寸、查邮戳、分析胶带品牌", s: { kubrick: 4, nolan: 3, hitchcock: 2, villeneuve: 1 } },
+      { t: "一秒撕开，悬念是给胆小鬼准备的", s: { tarantino: 4, bong: 3, coen: 2, fellini: 1 } },
+      { t: "先放在不同光线下拍了几组照片", s: { varda: 4, wonkar: 3, lynch: 2, gerwig: 1 } },
+      { t: "在窗台上放三天，享受「不知道」的快感", s: { akerman: 4, apichatpong: 3, tarkovsky: 2, wes: 1 } }
+    ]
+  },
+  {
+    q: "如果你是一种天气：",
+    o: [
+      { t: "暴风雨前那种让头皮发麻的闷热", s: { hitchcock: 4, villeneuve: 3, bong: 2, lynch: 1 } },
+      { t: "热带午后说来就来的暴雨", s: { apichatpong: 4, jia: 3, fellini: 2, tarantino: 1 } },
+      { t: "冬天清晨第一场雪落地的声音", s: { miyazaki: 4, koreeda: 3, akerman: 2, spielberg: 1 } },
+      { t: "黄昏最后那几分钟，什么都在消失", s: { wonkar: 4, varda: 3, leeang: 2, wes: 1 } }
+    ]
+  },
+  {
+    q: "有人说你「想太多了」：",
+    o: [
+      { t: "谢谢，想少了才可怕", s: { kubrick: 4, nolan: 3, wes: 2, villeneuve: 1 } },
+      { t: "你确定不是你想太少了？", s: { bong: 4, coen: 3, gerwig: 2, tarantino: 1 } },
+      { t: "你说得对……但我真的停不下来", s: { leeang: 4, koreeda: 3, miyazaki: 2, wonkar: 1 } },
+      { t: "不是我想多了，是这个世界太粗糙", s: { akerman: 4, tarkovsky: 3, wonkar: 2, apichatpong: 1 } }
+    ]
+  },
+  {
+    q: "给全人类发一条匿名弹幕：",
+    o: [
+      { t: "「闭嘴听风」", s: { tarkovsky: 4, villeneuve: 3, apichatpong: 2, akerman: 1 } },
+      { t: "「你演得太用力了」", s: { coen: 4, jia: 3, bong: 2, fellini: 1 } },
+      { t: "「没事的，会好的」", s: { spielberg: 4, miyazaki: 3, koreeda: 2, gerwig: 1 } },
+      { t: "「你是不是也有种被谁盯着的感觉」", s: { hitchcock: 4, lynch: 3, wonkar: 2, varda: 1 } }
+    ]
+  },
+  {
+    q: "做了个很离谱的梦，醒来后：",
+    o: [
+      { t: "抓起手机记下每个不合理的细节", s: { lynch: 4, fellini: 3, apichatpong: 2, koreeda: 1 } },
+      { t: "画一张梦的流程图分析叙事漏洞", s: { nolan: 4, kubrick: 3, hitchcock: 2, bong: 1 } },
+      { t: "添油加醋讲给朋友听当段子", s: { tarantino: 4, gerwig: 3, spielberg: 2, coen: 1 } },
+      { t: "闭上眼试图再回到梦里", s: { wonkar: 4, koreeda: 3, akerman: 2, miyazaki: 1 } }
+    ]
+  },
+  {
+    q: "你最想要的无用超能力：",
+    o: [
+      { t: "看到别人脑海里正在播放的画面", s: { lynch: 4, apichatpong: 3, kubrick: 2, fellini: 1 } },
+      { t: "让周围一切自动变成完美对称", s: { wes: 4, nolan: 3, villeneuve: 2, bong: 1 } },
+      { t: "摸到任何东西就能看到它的一生", s: { varda: 4, jia: 3, spielberg: 2, wonkar: 1 } },
+      { t: "给全世界的BGM换成你的歌单", s: { tarantino: 4, fellini: 3, coen: 2, wes: 1 } }
+    ]
+  },
+  {
+    q: "吵完架冷战中，你会：",
+    o: [
+      { t: "写了三千字长信，然后永久存入草稿箱", s: { wonkar: 4, akerman: 3, leeang: 2, koreeda: 1 } },
+      { t: "面不改色装没事，内心在排练下一次对话", s: { hitchcock: 4, villeneuve: 3, nolan: 2, kubrick: 1 } },
+      { t: "憋不住先发一句「你吃了吗」破冰", s: { spielberg: 4, gerwig: 3, koreeda: 2, miyazaki: 1 } },
+      { t: "什么都不说，默默做了一桌菜", s: { miyazaki: 4, koreeda: 3, jia: 2, varda: 1 } }
+    ]
+  },
+  {
+    q: "你的人生电影片尾你想要：",
+    o: [
+      { t: "一首没有歌词的钢琴曲，画面慢慢暗掉", s: { tarkovsky: 4, akerman: 3, villeneuve: 2, leeang: 1 } },
+      { t: "一首烂大街但全场大合唱的老歌", s: { spielberg: 4, jia: 3, gerwig: 2, fellini: 1 } },
+      { t: "一首只有37个人听过的地下乐队的歌", s: { lynch: 4, coen: 3, wes: 2, tarantino: 1 } },
+      { t: "没有音乐，只有环境音慢慢消失", s: { wonkar: 4, apichatpong: 3, leeang: 2, varda: 1 } }
+    ]
+  },
+  {
+    q: "好朋友说她在公司被当透明人了：",
+    o: [
+      { t: "立刻帮她拆解局面+三步行动计划", s: { nolan: 4, hitchcock: 3, bong: 2, kubrick: 1 } },
+      { t: "什么也不说，就默默陪她坐着", s: { koreeda: 4, miyazaki: 3, akerman: 2, varda: 1 } },
+      { t: "「走，现在就去喝一杯，骂他个够」", s: { tarantino: 4, varda: 3, jia: 2, fellini: 1 } },
+      { t: "过了很久发一条消息：「我一直都看见你」", s: { leeang: 4, wonkar: 3, gerwig: 2, akerman: 1 } }
+    ]
+  },
+  {
+    q: "你更喜欢怎么记录生活？",
+    o: [
+      { t: "手写日记，像给未来的自己写密信", s: { akerman: 4, wonkar: 3, tarkovsky: 2, leeang: 1 } },
+      { t: "到处拍——垃圾桶、野猫、墙上的裂缝", s: { varda: 4, jia: 3, fellini: 2, apichatpong: 1 } },
+      { t: "做精致相册，配色排版必须完美", s: { wes: 4, gerwig: 3, spielberg: 2, miyazaki: 1 } },
+      { t: "不记录，记住了就记住了，忘了就忘了", s: { apichatpong: 4, miyazaki: 3, koreeda: 2, villeneuve: 1 } }
+    ]
+  },
+  {
+    q: "看完一部让你久久回不过神的电影：",
+    o: [
+      { t: "它戳中了你一直想说但说不出的东西", s: { leeang: 4, akerman: 3, wonkar: 2, koreeda: 1 } },
+      { t: "它让你第一次注意到了某些人的存在", s: { varda: 4, jia: 3, villeneuve: 2, spielberg: 1 } },
+      { t: "你在黑暗中偷偷哭了又偷偷笑了", s: { gerwig: 4, spielberg: 3, miyazaki: 2, koreeda: 1 } },
+      { t: "你想立刻二刷来研究它是怎么做到的", s: { nolan: 4, kubrick: 3, hitchcock: 2, wes: 1 } }
+    ]
+  },
+  {
+    q: "如果你死后可以变成一样东西留在人间：",
+    o: [
+      { t: "一盏永远不关的路灯", s: { jia: 4, fellini: 3, leeang: 2, hitchcock: 1 } },
+      { t: "一部没有结局的电影", s: { lynch: 4, apichatpong: 3, tarkovsky: 2, villeneuve: 1 } },
+      { t: "一张被很多人坐过的公园长椅", s: { varda: 4, koreeda: 3, gerwig: 2, miyazaki: 1 } },
+      { t: "一个所有人都找不到的暗门", s: { hitchcock: 4, kubrick: 3, bong: 2, nolan: 1 } }
+    ]
+  },
+  {
+    q: "最想印在T恤上的一句话：",
+    o: [
+      { t: "「请勿触碰」", s: { kubrick: 4, wes: 3, hitchcock: 2, nolan: 1 } },
+      { t: "「人生苦短，别看烂片」", s: { tarantino: 4, coen: 3, fellini: 2, bong: 1 } },
+      { t: "「我没事」（背面写着「骗你的」）", s: { leeang: 4, wonkar: 3, akerman: 2, gerwig: 1 } },
+      { t: "「你看那朵云」", s: { miyazaki: 4, apichatpong: 3, varda: 2, jia: 1 } }
+    ]
+  },
+  {
+    q: "你和「空闲时间」的关系是：",
+    o: [
+      { t: "发呆越久越好，脑子里的画面自己会来", s: { apichatpong: 4, jia: 3, akerman: 2, tarkovsky: 1 } },
+      { t: "心里会生出一种无法忍受的焦虑感", s: { villeneuve: 4, kubrick: 3, nolan: 2, bong: 1 } },
+      { t: "立刻找事做——人生苦短不容浪费", s: { bong: 4, coen: 3, jia: 2, tarantino: 1 } },
+      { t: "做点什么有仪式感的小事，比如泡一杯茶", s: { spielberg: 4, miyazaki: 3, leeang: 2, koreeda: 1 } }
+    ]
+  }
+];
+
 
 var qs=[],ci=0,ans=[],busy=false,lastResult=null;
 function shuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t}return b}
